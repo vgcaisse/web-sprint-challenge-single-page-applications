@@ -3,8 +3,8 @@ import React from 'react';
 
 export default function PizzaForm(props) {
 
-    const { values, change, submit, instructions } = props;
-
+    const { change, submit, instructions, errors } = props;
+    const { name, sauce, toppings } = props.values;
 
 
     const onSubmit = evt => {
@@ -21,33 +21,35 @@ export default function PizzaForm(props) {
     return (
         <div className='form-container'>
             <h1>Build Your Own Pizza</h1>
+            <p>{errors.name}</p>
+        
                 <h2>Name:</h2>
                 <label id={'name-input'}>Name: 
                     <input
                         type="text"
                         name="instructions"
                         placeholder="What is thines name, sire?"
-
+                        value={name}
                         value={instructions}
                         onChange={onChange}
                     />
                 </label>
                 
-            <form onSubmit={onSubmit}>
-                <h2>size</h2>
+            <form onSubmit={onSubmit} id='pizza-form'>
+                <h2>Pizza Size</h2>
                 <label id={'size-dropdown'}>Size:
                     <select onChange={onChange}>
-                        <option value="">-- Select a Size --</option>
+                        <option value={""}>-- Select a Size --</option>
 
-                        <option value="Small">Small</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Large">Large</option>
+                        <option value='Small'>Small</option>
+                        <option value='Medium'>Medium</option>
+                        <option value='Large'>Large</option>
                     </select>
                 </label>
 
                 <h2>Sauce Options</h2>
                 <label id={'size-dropdown'}>Sauce:
-                    <select onChange={onChange}>
+                    <select onChange={onChange} value={sauce}>
                         <option value="">-- Select a Sauce --</option>
 
                         <option value="Small">Marinara</option>
@@ -60,36 +62,36 @@ export default function PizzaForm(props) {
 
                 <label>Ricotta:
                     <input
+                        value={toppings}
                         type='checkbox'
                         name='topping1'
-                        // checked={topping1}
                         onChange={onChange}            
                     />
                 </label>
 
                 <label>Spinach:
                     <input
+                        value={toppings}
                         type='checkbox'
                         name='topping2'
-                        // checked={topping2}
                         onChange={onChange}            
                     />
                 </label>
 
                 <label>Pineapple:
                     <input
+                        value={toppings}
                         type='checkbox'
                         name='topping3'
-                        // checked={topping3}
                         onChange={onChange}            
                     />
                 </label>
 
                 <label>Roasted Tomatoes:
                     <input
+                        value={toppings}
                         type='checkbox'
                         name='topping4'
-                        // checked={topping4}
                         onChange={onChange}            
                     />
                 </label>
