@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function PizzaForm(props) {
 
-    const { values, update, submit } = props;
+    const { values, update, submit, instructions } = props;
 
 
 
@@ -29,42 +29,64 @@ export default function PizzaForm(props) {
                         <option value="Large">Large</option>
                     </select>
                 </label>
+
+                <label id={'name-input'}>Name: 
+                    <input
+                        type="text"
+                        name="instructions"
+                        placeholder="Give us thine command my leige!!"
+                        value={instructions}
+                        onChange={onChange}
+                    />
+                </label>
                 
                 <h2>Toppings</h2>
 
-                <label>Ricotta
+                <label>Ricotta:
                     <input
-                    type='checkbox'
-                    name='topping1'
-                    // checked={topping1}
-                    onChange={onChange}            
+                        type='checkbox'
+                        name='topping1'
+                        // checked={topping1}
+                        onChange={onChange}            
                     />
                 </label>
 
-                <label>Spinach
+                <label>Spinach:
                     <input
-                    type='checkbox'
-                    name='topping1'
-                    // checked={topping1}
-                    onChange={onChange}            
+                        type='checkbox'
+                        name='topping2'
+                        // checked={topping2}
+                        onChange={onChange}            
                     />
                 </label>
 
-                <label>Pineapple
+                <label>Pineapple:
                     <input
-                    type='checkbox'
-                    name='topping1'
-                    // checked={topping1}
-                    onChange={onChange}            
+                        type='checkbox'
+                        name='topping3'
+                        // checked={topping3}
+                        onChange={onChange}            
                     />
                 </label>
 
-                <label>Roasted Tomatoes
+                <label>Roasted Tomatoes:
                     <input
-                    type='checkbox'
-                    name='topping1'
-                    // checked={topping1}
-                    onChange={onChange}            
+                        type='checkbox'
+                        name='topping4'
+                        // checked={topping4}
+                        onChange={onChange}            
+                    />
+                </label>
+
+                <h2>Special Instructions</h2>
+
+                <label id={'special-text'}>Instructions: 
+                    <input
+                        type="text"
+                        name="instructions"
+                        placeholder="Give us thine command my leige!!"
+                        value={instructions}
+                        onChange={onChange}
                     />
                 </label>
             </form>
