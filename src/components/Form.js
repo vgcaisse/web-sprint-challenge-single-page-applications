@@ -2,24 +2,26 @@ import React from 'react';
 
 export default function PizzaForm(props) {
 
-    const { values, update, submit, instructions } = props;
+    const { values, change, submit, instructions } = props;
 
 
 
     const onSubmit = evt => {
         evt.preventDefault();
         submit();
-    }
+      }
 
     const onChange = evt => {
-        const { value } = evt.target;
-        update(value);
-    }
+        const { name, value, checked, type } = evt.target;
+        const newValue = type === 'checkbox' ? checked : value;
+        change(name, newValue);
+      }
 
     return (
         <div className='form-container'>
             <h1>Build Your Own Pizza</h1>
-            <form>
+
+            <form onSubmit={onSubmit}>
                 <label id={'size-dropdown'}>Size
                     <select onChange={onChange}>
                         <option value="">-- Select a Role --</option>
@@ -30,11 +32,14 @@ export default function PizzaForm(props) {
                     </select>
                 </label>
 
+                <h2>Name:</h2>
+
                 <label id={'name-input'}>Name: 
                     <input
                         type="text"
                         name="instructions"
-                        placeholder="Give us thine command my leige!!"
+                        placeholder="What is thines name, sire?"
+
                         value={instructions}
                         onChange={onChange}
                     />
@@ -90,9 +95,7 @@ export default function PizzaForm(props) {
                     />
                 </label>
             </form>
-            <button onClick={submit}>
-                Submit
-            </button>
+           <input type='submit' value='create your pizza!' />
         </div>
       )
 } 
