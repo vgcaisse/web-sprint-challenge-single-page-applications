@@ -21,8 +21,18 @@ const App = () => {
 
   return (
     <div>
+      <nav>
+        <div className='navLinks'>
+          <Link to='/'>Home  |  </Link>
+          <Link to='/order-pizza' id='order-pizza'>Make Your Own Pizza</Link>
+        </div>
+      </nav>
+      
       <h1>Lambda Eats</h1>
-      <PizzaForm />
+      
+       
+      <PizzaForm id='order-pizza'/>
+      
       {/* <nav>
         <div className='nav-links'>
           <Link to="/">Home</Link>

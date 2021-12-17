@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function PizzaForm(props) {
 
     const { values, change, submit, instructions } = props;
@@ -20,20 +21,7 @@ export default function PizzaForm(props) {
     return (
         <div className='form-container'>
             <h1>Build Your Own Pizza</h1>
-
-            <form onSubmit={onSubmit}>
-                <label id={'size-dropdown'}>Size
-                    <select onChange={onChange}>
-                        <option value="">-- Select a Role --</option>
-
-                        <option value="Small">Small</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Large">Large</option>
-                    </select>
-                </label>
-
                 <h2>Name:</h2>
-
                 <label id={'name-input'}>Name: 
                     <input
                         type="text"
@@ -45,6 +33,29 @@ export default function PizzaForm(props) {
                     />
                 </label>
                 
+            <form onSubmit={onSubmit}>
+                <h2>size</h2>
+                <label id={'size-dropdown'}>Size:
+                    <select onChange={onChange}>
+                        <option value="">-- Select a Size --</option>
+
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                    </select>
+                </label>
+
+                <h2>Sauce Options</h2>
+                <label id={'size-dropdown'}>Sauce:
+                    <select onChange={onChange}>
+                        <option value="">-- Select a Sauce --</option>
+
+                        <option value="Small">Marinara</option>
+                        <option value="Medium">Alfredo</option>
+                        <option value="Large">BBQ</option>
+                    </select>
+                </label>
+
                 <h2>Toppings</h2>
 
                 <label>Ricotta:

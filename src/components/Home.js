@@ -4,14 +4,14 @@ import { useHistory } from 'react-router-dom';
 export default function Home() {
     const history = useHistory();
   
-    const routeToShop = () => {
-      history.push('/items-list');
+    const routeHome = () => {
+      history.push('/');
     }
   
     return (
       <div className='home-container'>
         <button
-          onClick={routeToShop}
+          onClick={routeHome}
           className='home-btn'
         >
           Home
