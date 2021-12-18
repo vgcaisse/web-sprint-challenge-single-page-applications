@@ -17,7 +17,7 @@ const initialFormValues = {
 }
 
 const formErrors = {
-  name: 'Your name should be at least 2 characters long',
+  name: '',
 }
 
 const App = () => {

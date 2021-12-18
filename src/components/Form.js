@@ -31,7 +31,6 @@ export default function PizzaForm(props) {
                         name="instructions"
                         placeholder="What is thines name, sire?"
                         value={name}
-                        value={instructions}
                         onChange={onChange}
                     />
                 </label>
@@ -103,7 +102,7 @@ export default function PizzaForm(props) {
                     <input
                         type="text"
                         name="instructions"
-                        placeholder="Give us thine command my leige!!"
+                        placeholder="Give us thine command, sire!!"
                         value={instructions}
                         onChange={onChange}
                     />
