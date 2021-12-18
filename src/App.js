@@ -67,20 +67,20 @@ const App = () => {
         <Link to='/pizza'>Build Your pizza</Link>
       </button>
       
-
-        <Route path='/pizza'>
-          <PizzaForm id='pizza-form'
-            values={formValues}
-            change={updateForm}
-            errors={formErrors}
-            submit={submitForm}
-          />
-        </Route>
+        <Switch>
+          <Route path='/pizza'>
+            <PizzaForm id='pizza-form'
+              values={formValues}
+              change={updateForm}
+              errors={formErrors}
+              submit={submitForm}
+            />
+          </Route>
+        </Switch>
 
         <Route path="/">
-          <Home />
-        </Route>
-
+            <Home />
+          </Route>
       {
         order.map(order => {
           <div>
