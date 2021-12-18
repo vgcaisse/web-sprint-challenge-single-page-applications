@@ -14,7 +14,7 @@ export default function Home() {
           onClick={routeHome}
           className='home-btn'
         >
-          Home
+          Cancel
         </button>
       </div>
     )

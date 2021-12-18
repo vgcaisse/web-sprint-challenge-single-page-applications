@@ -63,15 +63,24 @@ const App = () => {
       </nav>
       
       <h1>Lambda Eats</h1>
+      <button>
+        <Link to='/pizza'>Build Your pizza</Link>
+      </button>
       
-       
-      <PizzaForm id='pizza-form'
-        values={formValues}
-        change={updateForm}
-        errors={formErrors}
-        submit={submitForm}
-      />
-      
+
+        <Route path='/pizza'>
+          <PizzaForm id='pizza-form'
+            values={formValues}
+            change={updateForm}
+            errors={formErrors}
+            submit={submitForm}
+          />
+        </Route>
+
+        <Route path="/">
+          <Home />
+        </Route>
+
       {
         order.map(order => {
           <div>
@@ -81,13 +90,7 @@ const App = () => {
         })
       }
 
-<Switch>
 
-<Route path="/">
-  <Home />
-</Route>
-
-</Switch>
       {/* <nav>
         <div className='nav-links'>
           <Link to="/">Home</Link>
